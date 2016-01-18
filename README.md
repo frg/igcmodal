@@ -47,6 +47,7 @@ Possible options:
 * `forceShow` - adds class to show modal
 * `forceHide` – removes class to hide modal
 * `destroy` – removes Modal DOM nodes from document
+* `closeButton` – sets close button - *boolean* / *DOM element*: `$('#header').get(0)` / `false`
 * `setContent` – sets Modal content – *string* / *DOM element*: `<h1>content</h1>` / `$('#header').get(0)` / `"Content"`
 * `isShowing` – checks if Modal is currently showing
 * `isHidden` – checks if Modal is currently hidden
