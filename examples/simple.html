@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>title</title>
+		<link rel="stylesheet" href="../igc-modal.css">
+		<script src="../igc-modal.js"></script>
+	</head>
+	<body>
+		<script>
+			window.modalDemo = IgcModal({
+			    className: "modal-demo",
+			    content: "<h1>This is a modal.</h1>", //"http://www.w3schools.com",//$('#header').get(0),//"This is a modal",
+			    maxWidth: 600, // 600 = 600px, 100%, 100px, 100vh etc
+			    minWidth: 280,
+			    closeButton: true, //$('#header').get(0),
+			    beforeShow: function() {
+			        console.info("[MODAL] Before Show", this.modal);
+			    },
+			    afterShow: function() {
+			        console.info("[MODAL] After Show", this.modal);
+			    },
+			    beforeHide: function() {
+			        console.info("[MODAL] Before Hide", this.modal);
+			    },
+			    afterHide: function() {
+			        console.info("[MODAL] After Hide", this.modal);
+			    }
+			});
+			
+			window.modalDemo.show();
+		</script>
+	</body>
+</html>
