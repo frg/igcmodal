@@ -19,7 +19,7 @@ Example:
 window.modalDemo = IgcModal({
     className: "modal-demo",
     content: "<h1>This is a modal.</h1>",//"http://www.w3schools.com",//$('#header').get(0),//"This is a modal",
-    maxWidth: 600, // 600 = 600px, 100%, 100px, 100vh etc
+    maxWidth: 600, // 600 = 600px
     minWidth: 280,
     closeButton: true,//$('#header').get(0),
     beforeShow: function () {
