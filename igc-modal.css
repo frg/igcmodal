@@ -6,11 +6,9 @@
     
     position: absolute;
     height: auto;
-    max-height: 400px;
     overflow-y: auto;
     top: 100px;
     top: 10vh;
-    bottom: 0;
     left: 0;
     right: 0;
     z-index: 1001;
@@ -25,8 +23,6 @@
 
 .igc-modal .igc-modal-content {
     width: 100%;
-    height: 100%;
-    overflow: hidden;
 }
 
 .igc-modal .igc-modal-closebtn {
