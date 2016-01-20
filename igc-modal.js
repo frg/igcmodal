@@ -6,8 +6,9 @@
      * - afterShow
      * - beforeHide
      * - afterHide
+     * - afterDomInit
      *
-     * Functions:
+     * Instance Functions:
      * - show
      * - hide
      * - forceShow (no events)
@@ -17,6 +18,9 @@
      * - isShowing
      * - isHidden
      * - onOverlayClick
+     * 
+     * Global Functions:
+     * - hideAll
      */
 
     var className, openClassName, contentClassName, overlayClassName, modalArr;
@@ -26,7 +30,7 @@
     closeBtnClassName = className + "-closebtn";
     contentClassName = className + "-content";
     overlayClassName = className + "-overlay";
-    //modalArr = [];
+    modalArr = [];
 
     var IgcModal = function(options) {
         return new IgcModal.init(options);
@@ -34,19 +38,20 @@
 
     var defaultOptions = {
         className: null,
-        content: "<h1>This is a modal.</h1>", //$('#header').get(0),//"This is a modal",//content = '<iframe src="' + contentA + '" frameborder="0" allowfullscreen align="center" style="overflow:hidden;height:100%;width:100%" height="100%" width="100%"><p>Your browser does not support iframes.</p></iframe>';
-        maxWidth: 600, // 600 = 600px
-        minWidth: 280,
-        closeButton: true, //$('#header').get(0),
+        // content: $('#header').get(0),
+        // content: "This is a modal",
+        // content = '<iframe src="' + contentA + '" frameborder="0" allowfullscreen align="center" style="overflow:hidden;height:100%;width:100%" height="100%" width="100%"><p>Your browser does not support iframes.</p></iframe>',
+        content: "",
+        maxWidth: null, // 600 = 600px
+        minWidth: null,
+        closeButton: true, // accepts same args as content property
         overlay: true,
         beforeShow: function() {},
         afterShow: function() {},
         beforeHide: function() {},
         afterHide: function() {},
-        onOverlayClick: function(event) {
-            // by default overlay click closes modal
-            return this.hide.call(this);
-        }
+        afterDomInit: function() {},
+        onOverlayClick: function() {}
     };
 
     IgcModal.prototype = {
@@ -88,6 +93,12 @@
         },
         destroy: function() {
             document.body.removeChild(this.modal);
+            document.body.removeChild(this.overlay);
+
+            var index = modalArr.indexOf(this);
+            if (index > -1) {
+                modalArr.splice(index, 1);
+            }
         },
         setContent: function(content) {
             this.content.parentNode.removeChild(this.content);
@@ -120,7 +131,18 @@
         buildModal.call(this);
         initEvents.call(this);
 
+        modalArr.push(this);
+
         return this;
+    };
+
+    IgcModal.hideAll = function(/*callback*/) {
+        // callback = callback ? callback : function(){ return true; }
+        for (var i = 0, len = modalArr.length; i < len; i++) {
+            // if (callback(modalArr[i], i)) {
+                modalArr[i].hide();
+            // };
+        };
     };
 
     function buildModal() {
@@ -157,6 +179,8 @@
         docFrag.appendChild(this.modal);
 
         document.body.appendChild(docFrag);
+
+        this.options.afterDomInit.call(this);
     }
 
     function buildModalContent(content) {
@@ -182,9 +206,7 @@
 
         // overlay click -- trigger defined event
         if (this.overlay) {
-            this.overlay.addEventListener('click', function(event) {
-                this.options.onOverlayClick.call(this, event);
-            }.bind(this));
+            this.overlay.addEventListener('click', this.options.onOverlayClick.bind(this));
         }
     }
 

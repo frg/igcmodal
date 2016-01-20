@@ -6,9 +6,9 @@
     
     position: absolute;
     height: auto;
-    overflow-y: auto;
-    top: 100px;
-    top: 10vh;
+    overflow: initial;
+    transform: translateY(-50%);
+    top: 50%;
     left: 0;
     right: 0;
     z-index: 1001;
@@ -48,6 +48,7 @@
     left: 0;
     z-index: 1000;
     overflow: hidden;
+    pointer-events: none;
 
     -webkit-transition: .4s opacity ease;
        -moz-transition: .4s opacity ease;
@@ -57,4 +58,5 @@
 
 .igc-modal-overlay.igc-modal-visible {
     opacity: 1;
+    pointer-events: auto;
 }
