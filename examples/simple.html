@@ -14,7 +14,7 @@
                 maxWidth: 600, // 600 = 600px
                 minWidth: 280,
                 beforeShow: function() {
-                    console.info("[MODAL] Before Show", this.modal);
+                    console.info("[MODAL] Before Show", this);
 
                     this.listener = function(evt) {
 					    evt = evt || window.event;
@@ -26,17 +26,17 @@
                     document.addEventListener('keydown', this.listener, false);
                 },
                 afterShow: function() {
-                    console.info("[MODAL] After Show", this.modal);
+                    console.info("[MODAL] After Show", this);
                 },
                 beforeHide: function() {
-                    console.info("[MODAL] Before Hide", this.modal);
+                    console.info("[MODAL] Before Hide", this);
                 },
                 afterHide: function() {
-                    console.info("[MODAL] After Hide", this.modal);
+                    console.info("[MODAL] After Hide", this);
                     document.removeEventListener('keydown', this.listener, false);
                 },
                 afterDomInit: function() {
-                    console.info("[MODAL] After DOM init", this.modal);
+                    console.info("[MODAL] After DOM init", this);
                 },
                 onOverlayClick: function(event) {
                     return this.hide.call(this);

@@ -17,7 +17,6 @@
      * - setContent (change content - dom element, html, string)
      * - isShowing
      * - isHidden
-     * - onOverlayClick
      * 
      * Global Functions:
      * - hideAll
@@ -49,7 +48,7 @@
         beforeShow: function() {},
         afterShow: function() {},
         beforeHide: function() {},
-        afterHide: function() {},
+        afterHide: function() {}
         afterDomInit: function() {},
         onOverlayClick: function() {}
     };
