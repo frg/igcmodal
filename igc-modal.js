@@ -70,12 +70,26 @@
             return this;
         },
         forceShow: function() {
+            var highest = 0;
+            for (var i = 0, len = modalArr.length; i < len; i++) {
+                var zindex = document.defaultView.getComputedStyle(modalArr[i].modal, null).getPropertyValue("z-index");
+                
+                if ((zindex > highest) && (zindex != 'auto')) {
+                    highest = zindex;
+                }
+            }
+            highest = parseInt(highest);
+
+            this.modal.style.zIndex = highest + 2;
             if (!elementHasClass(this.modal, openClassName)) {
                 this.modal.className = this.modal.className + " " + openClassName;
             }
 
-            if (this.overlay && !elementHasClass(this.overlay, openClassName)) {
-                this.overlay.className = this.overlay.className + " " + openClassName;
+            if (this.overlay) {
+                this.overlay.style.zIndex = highest + 1;
+                if (!elementHasClass(this.overlay, openClassName)) {
+                    this.overlay.className = this.overlay.className + " " + openClassName;
+                };
             }
 
             return this;
