@@ -120,6 +120,7 @@
         this.closeButton = null;
         this.modal = null;
         this.overlay = null;
+        this.options = null;
 
         // Create options by extending defaults with the passed in arugments
         if (options && typeof options === "object") {
@@ -136,12 +137,13 @@
         return this;
     };
 
-    IgcModal.hideAll = function(/*callback*/) {
-        // callback = callback ? callback : function(){ return true; }
+    IgcModal.hideAll = function (shouldForceHide) {
         for (var i = 0, len = modalArr.length; i < len; i++) {
-            // if (callback(modalArr[i], i)) {
+            if (shouldForceHide) {
+                modalArr[i].forceHide();
+            } else {
                 modalArr[i].hide();
-            // };
+            }
         };
     };
 
@@ -218,14 +220,18 @@
         return element.className.replace(new RegExp("(\\s|^)" + className + "(\\s|$)"), '');
     }
 
-    function extendDefaults(source, properties) {
-        var property;
-        for (property in properties) {
-            if (properties.hasOwnProperty(property)) {
-                source[property] = properties[property];
+    function extendDefaults(defaults, options) {
+        var deafultProperty;
+        for (deafultProperty in defaults) {
+            if (defaults.hasOwnProperty(deafultProperty)) {
+                if (options[deafultProperty] === undefined) {
+                    // if defaults property is undefined in options
+                    // add the default property to options
+                    options[deafultProperty] = defaults[deafultProperty];
+                };
             }
         }
-        return source;
+        return options;
     }
 
     IgcModal.init.prototype = IgcModal.prototype;
