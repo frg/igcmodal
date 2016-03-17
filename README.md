@@ -1,19 +1,23 @@
 # Modal
-v1.0
+v1.0.0
 
 ## Description
-A light Modal plugin, providing low level functionality with intent of high flexibility.
+A light Modal plugin, providing basic functionality with intent of high flexibility.
 
 ## Dependencies
 None.
 
 ## Todo
- - Test Browser Compatibility
+ - Browser compatibility tests
+ - Better test coverage
+ - Create extension examples
 
 ##  Installation & Usage
 
-1. Import 'igc-modal.js' and 'igc-modal.css'
-2. Follow example below
+1. Clone repository
+2. Run npm install
+3. Run npm run build
+4. Reference dist/igc-modal.min.js & dist/igc-modal.min.js
 
 Example:
 
@@ -60,7 +64,7 @@ var modalDemo = IgcModal({
 
 ### Options
 Possible options:
-* `className` – appends to default class name – *string* : `demo-modal another-class`
+* `className` – appends to default container class name – *string* : `demo-modal another-class`
 * `content` – sets initial Modal content – *string* / *DOM element*: `<h1>content</h1>` / `$('#header').get(0)` / `"Content"`
 * `maxWidth` – sets Modal max width – *number* : `600`
 * `minWidth` – sets Modal min width – *number* : `280`
@@ -82,6 +86,7 @@ Instance functions:
 * `setContent` – sets Modal content – *string* / *DOM element*: `<h1>content</h1>` / `$('#header').get(0)` / `"Content"`
 * `isShowing` – checks if Modal is currently showing
 * `isHidden` – checks if Modal is currently hidden
+* `isVisible` - checks if Modal is visible with fidelity to z-index
 
 Global functions:
 * `hideAll` – hides all modal instances (arguments[0] - shouldForceHide) – *boolean* : true
