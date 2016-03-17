@@ -17,7 +17,7 @@
      * - setContent (change content - dom element, html, string)
      * - isShowing 
      * - isHidden
-     * - isVisible
+     * - isVisible (checks if modal is showing and is on top)
      * 
      * Global Functions:
      * - hideAll
