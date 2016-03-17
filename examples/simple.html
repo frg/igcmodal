@@ -8,9 +8,9 @@
 	</head>
 	<body>
 		<script>
-			window.modalDemo = IgcModal({
+            window.modalDemo = IgcModal({
                 className: "modal-demo",
-                content: "<h1>This is a modal.</h1>",
+                content: "<h1>This is a modal.</h1><br><h1>This is a modal.</h1><br><h1>This is a modal.</h1><br><h1>This is a modal.</h1><br><h1>This is a modal.</h1><br><h1>This is a modal.</h1><br><h1>This is a modal.</h1><br><h1>This is a modal.</h1><br><h1>This is a modal.</h1>",
                 maxWidth: 600, // 600 = 600px
                 minWidth: 280,
                 beforeShow: function() {
@@ -37,15 +37,20 @@
                 },
                 afterDomInit: function() {
                     console.info("[MODAL] After DOM init", this);
-                },
-                onOverlayClick: function(event) {
-                    return this.hide.call(this);
                 }
             });
 
 			window.modalDemo2 = IgcModal({
                 className: "modal-demo2",
                 content: "<h1>This is a modal #2.</h1>",
+                maxWidth: 600, // 600 = 600px
+                minWidth: 280,
+                closeButton: false
+            });
+
+            window.modalDemo3 = IgcModal({
+                className: "modal-demo3",
+                content: "<h1>This is a modal #3.</h1>",
                 maxWidth: 600, // 600 = 600px
                 minWidth: 280
             });
