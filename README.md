@@ -17,7 +17,7 @@ None.
 1. Clone repository
 2. Run npm install
 3. Run npm run build
-4. Reference dist/igc-modal.min.js & dist/igc-modal.min.js
+4. Reference dist/igc-modal.min.js & dist/igc-modal.min.css
 
 Example:
 
