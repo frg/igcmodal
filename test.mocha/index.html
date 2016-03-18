@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Mocha Test</title>
+        
+        <!-- modal imports-->
+        <link rel="stylesheet" href="../src/igc-modal.css">
+        
+         <!-- test imports -->
+        <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+    </head>
+    <body>
+        <div id="mocha"></div>
+        
+        <!-- modal imports-->
+		<script src="../src/igc-modal.js"></script>
+        
+        <!-- test imports -->
+        <script src="../node_modules/mocha/mocha.js"></script>
+        <script src="../node_modules/chai/chai.js"></script>
+        <script src="../node_modules/jquery/dist/jquery.js"></script>
+        
+        <script>
+            mocha.ui('bdd');
+            mocha.reporter('html');
+            var expect = chai.expect;
+        </script>
+        
+        <!-- custom tests -->
+        <script src="tests.js"></script>
+        
+        <script>
+            mocha.run();
+        </script>
+    </body>
+</html>
+
