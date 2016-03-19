@@ -1,4 +1,6 @@
 (function(global) {
+    'use strict';
+    
     /* IGC MODAL PLUGIN
      *
      * Events:
@@ -53,7 +55,6 @@
         maxWidth: null, // 600 = 600px
         minWidth: null,
         closeButton: true, // accepts same args as content property
-        overlay: true,
         hideOverlayOnClick: true,
         /**
          * (callback fired before the modal is shown)
