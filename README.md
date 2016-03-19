@@ -69,7 +69,6 @@ Possible options:
 * `maxWidth` – sets Modal max width – *number* : `600`
 * `minWidth` – sets Modal min width – *number* : `280`
 * `closeButton` – sets close button – *boolean* / *DOM element*: `$('#header').get(0)` / `false`
-* `overlay` – sets if overlay should be shown or nor – *boolean* : `true`
 * `beforeShow` – function called before Modal is shown - *function*: `function () {  }`
 * `afterShow` – function called after Modal is shown - *function*: `function () {  }`
 * `beforeHide` – function called before Modal is hidden - *function*: `function () {  }`
