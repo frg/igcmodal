@@ -212,5 +212,25 @@ describe('IGC Modal Tests', function() {
         });
 
     });
+    
+    describe('Content', function() {
+
+        it('String content equality!', function() {
+            var content = '<h1>hi there!</h1>';
+            
+            modal1.setContent(content);
+            
+            expect($('.igc-modal-inner', modal1.modal).html() === '<div>' + content + '</div>').to.equal(true);
+        });
+        
+        it('Element content equality!', function() {
+            var content = $('#test-modal-content').get(0);
+            
+            modal1.setContent(content);
+            
+            expect($('.igc-modal-inner', modal1.modal).html() === '<div>' + content.innerHTML + '</div>').to.equal(true);
+        });
+
+    });
 
 });
