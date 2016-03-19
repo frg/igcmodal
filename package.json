@@ -17,7 +17,7 @@
     "uglify-js": "^2.6.2"
   },
   "scripts": {
-    "build-min": "mkdir dist | uglifyjs src/igc-modal.js -c > dist/igc-modal.min.js | cleancss -o dist/igc-modal.min.css src/igc-modal.css",
+    "build-min": "mkdir dist | uglifyjs src/igc-modal.js --compress --mangle > dist/igc-modal.min.js --lint --source-map dist/igc-modal.map.js | cleancss -o dist/igc-modal.min.css src/igc-modal.css",
     "build": "npm run build-min"
   },
   "repository": {
