@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>IGC Modal</title>
+
+    <!-- src imports -->
+    <link rel="stylesheet" href="../src/igc-modal.css">
+    <script src="../src/igc-modal.js"></script>
+
+    <!-- dist imports -->
+    <!--<link rel="stylesheet" href="../dist/igc-modal.min.css">
+		<script src="../dist/igc-modal.min.js"></script>-->
+</head>
+
+<body>
+    <script>
+        var modalDemo;
+
+        modalDemo = IgcModal({
+            content: "<h1>Loading..</h1>",
+            beforeShow: function() {
+                console.info("[MODAL] Before Show", this);
+                
+                // allows content to be fetched only once
+                if (!this.contentFetched) {
+                    // this can be an http request or any other form of async call
+                    setTimeout(function(){
+                        this.contentFetched = true;
+                        this.setContent('<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed sodales purus. Integer eget dui ut nisi vestibulum condimentum. Etiam mollis quam ac arcu consequat ullamcorper. Vivamus non mi nulla. Integer eu luctus arcu. Praesent ante ipsum, tempus in sapien dictum, dignissim dignissim neque. Quisque congue sapien quis felis eleifend rhoncus. Aenean congue nibh in nibh mattis, eget fermentum purus viverra. Etiam et cursus velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed sodales purus. Integer eget dui ut nisi vestibulum condimentum. Etiam mollis quam ac arcu consequat ullamcorper. Vivamus non mi nulla. Integer eu luctus arcu. Praesent ante ipsum, tempus in sapien dictum, dignissim dignissim neque. Quisque congue sapien quis felis eleifend rhoncus. Aenean congue nibh in nibh mattis, eget fermentum purus viverra. Etiam et cursus velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>');
+                    }.bind(this), 400);
+                }
+            }
+        }).show();
+    </script>
+</body>
+
+</html>
