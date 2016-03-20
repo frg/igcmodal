@@ -89,9 +89,10 @@
          * @returns (the current instance of the modal)
          */
         show: function() {
-            this.options.beforeShow.call(this);
-            IgcModal.prototype.forceShow.call(this);
-            this.options.afterShow.call(this);
+            if (this.options.beforeShow.call(this) !== false) {
+                IgcModal.prototype.forceShow.call(this);
+                this.options.afterShow.call(this);
+            }
 
             return this;
         },
@@ -101,9 +102,10 @@
          * @returns (the current instance of the modal)
          */
         hide: function() {
-            this.options.beforeHide.call(this);
-            IgcModal.prototype.forceHide.call(this);
-            this.options.afterHide.call(this);
+            if (this.options.beforeHide.call(this) !== false) {
+                IgcModal.prototype.forceHide.call(this);
+                this.options.afterHide.call(this);
+            }
 
             return this;
         },
@@ -265,7 +267,7 @@
     /**
      * (function that sets new default options)
      * 
-     * @param options (options object that will extend & override the default options)
+     * @param options (options object that will override the default options)
      */
     IgcModal.setDefaultOptions = function(options) {
         if (options && typeof options === 'object') {
