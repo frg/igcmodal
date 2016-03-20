@@ -51,6 +51,8 @@
     right: .6rem;
     text-decoration: none;
     margin-bottom: 0;
+    /* It is recommended that close button does not inherit to avoid positioning bugs */
+    font-family: serif;
 }
 
 @supports (-ms-accelerator:true) {

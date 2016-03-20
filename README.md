@@ -1,5 +1,5 @@
 # Modal
-v1.0.0
+v1.1.0
 
 ## Description
 A light Modal plugin, providing basic functionality with intent of high flexibility.
@@ -8,7 +8,6 @@ A light Modal plugin, providing basic functionality with intent of high flexibil
 None.
 
 ## Todo
- - Browser compatibility tests
  - Create extension examples
 
 ##  Installation & Usage
