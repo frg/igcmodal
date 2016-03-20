@@ -9,7 +9,6 @@ None.
 
 ## Todo
  - Browser compatibility tests
- - Better test coverage
  - Create extension examples
 
 ##  Installation & Usage

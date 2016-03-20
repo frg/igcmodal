@@ -241,7 +241,7 @@
 
         buildModal.call(this);
         initEvents.call(this);
-
+        
         modalArr.push(this);
 
         return this;
@@ -340,11 +340,9 @@
         }
 
         if (this.options.hideOverlayOnClick === true) {
-            var self = this;
-
             this.modal.addEventListener('click', function(e) {
-                if (e === undefined || !elementIsDescendant(self.content, e.target)) {
-                    self.hide();
+                if (this.content !== e.target && !elementIsDescendant(this.content, e.target) && (this.closeButton && this.closeButton !== e.target)) {
+                    this.hide();
                 }
             }.bind(this));
         }
