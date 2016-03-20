@@ -88,6 +88,13 @@ Instance functions:
 
 Global functions:
 * `hideAll` – hides all modal instances (arguments[0] - shouldForceHide) – *boolean* : true
+* `setDefaultOptions` – overrides default options (arguments[0] - options) – *object* : {}
+
+## Browser Compatibility
+ - Chrome
+ - Firefox
+ - Edge
+ - IE 10+
 
 ## License
 MIT

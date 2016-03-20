@@ -261,6 +261,19 @@
             }
         }
     };
+    
+    /**
+     * (function that sets new default options)
+     * 
+     * @param options (options object that will extend & override the default options)
+     */
+    IgcModal.setDefaultOptions = function(options) {
+        if (options && typeof options === 'object') {
+            defaultOptions = extendDefaults(defaultOptions, options);
+        } else {
+            throw new Error('Invalid options parameter, typeof object required!');
+        }
+    };
 
     /**
      * (builds modal instance DOM structure)
