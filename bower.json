@@ -1,0 +1,28 @@
+{
+  "name": "igc-modal",
+  "description": "1.1.0",
+  "main": "src/igc-modal.js",
+  "authors": [
+    "Jean Farrugia"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "igc",
+    "gig",
+    "modal",
+    "js",
+    "plugin"
+  ],
+  "homepage": "https://github.com/iGamingCloud/Modal",
+  "moduleType": [
+    "globals"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

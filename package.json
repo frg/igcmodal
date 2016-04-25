@@ -1,39 +1,41 @@
 {
-  "name": "igc-modal",
-  "version": "1.1.0",
-  "description": "0.1.0",
-  "main": "examples/simple.html",
-  "directories": {
-    "example": "examples",
-    "test": "test"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "chai": "^3.5.0",
-    "clean-css": "^3.4.10",
-    "jquery": "^2.2.2",
-    "mocha": "^2.4.5",
-    "uglify-js": "^2.6.2"
-  },
-  "scripts": {
-    "build-min": "mkdir dist | uglifyjs src/igc-modal.js --output dist/igc-modal.min.js --source-map dist/igc-modal.min.map --source-map-url igc-modal.min.map --prefix 1 --source-map-include-sources --compress --mangle | cleancss -o dist/igc-modal.min.css src/igc-modal.css",
-    "build": "npm run build-min"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/iGamingCloud/Modal.git"
-  },
-  "keywords": [
-    "igc",
-    "gig",
-    "modal",
-    "js",
-    "plugin"
-  ],
-  "author": "Jean Farrugia",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/iGamingCloud/Modal/issues"
-  },
-  "homepage": "https://github.com/iGamingCloud/Modal#readme"
+    "name": "igc-modal",
+    "version": "1.1.0",
+    "description": "0.1.0",
+    "main": "src/igc-modal.js",
+    "directories": {
+        "example": "examples",
+        "test": "test"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "chai": "^3.5.0",
+        "clean-css": "^3.4.10",
+        "jquery": "^2.2.2",
+        "mocha": "^2.4.5",
+        "uglify-js": "^2.6.2"
+    },
+    "scripts": {
+        "build-min-css": "cleancss -o dist/igc-modal.min.css src/igc-modal.css",
+        "build-min-js": "uglifyjs src/igc-modal.js --output dist/igc-modal.min.js --source-map dist/igc-modal.min.map --source-map-url igc-modal.min.map --prefix 1 --source-map-include-sources --compress --mangle",
+        "build-min": "mkdir dist | npm run build-min-js | npm run build-min-css",
+        "build": "npm run build-min"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/iGamingCloud/Modal.git"
+    },
+    "keywords": [
+        "igc",
+        "gig",
+        "modal",
+        "js",
+        "plugin"
+    ],
+    "author": "Jean Farrugia",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/iGamingCloud/Modal/issues"
+    },
+    "homepage": "https://github.com/iGamingCloud/Modal#readme"
 }
