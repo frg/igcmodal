@@ -1,8 +1,8 @@
 {
-    "name": "igc-modal",
+    "name": "igcmodal",
     "version": "1.1.0",
     "description": "0.1.0",
-    "main": "src/igc-modal.js",
+    "main": "dist/igcmodal.min.js",
     "directories": {
         "example": "examples",
         "test": "test"
@@ -15,11 +15,17 @@
         "mocha": "^2.4.5",
         "uglify-js": "^2.6.2"
     },
-    "scripts": {
-        "build-min-css": "cleancss -o dist/igc-modal.min.css src/igc-modal.css",
-        "build-min-js": "uglifyjs src/igc-modal.js --output dist/igc-modal.min.js --source-map dist/igc-modal.min.map --source-map-url igc-modal.min.map --prefix 1 --source-map-include-sources --compress --mangle",
-        "build-min": "mkdir dist | npm run build-min-js | npm run build-min-css",
-        "build": "npm run build-min"
+    "scripts": {        
+        "build-min-css": "cleancss -o dist/igcmodal.min.css src/igcmodal.css",
+        "build-debug-css": "copy src\\igcmodal.css dist\\igcmodal.css",
+        
+        "build-min": "browserify src/igcmodal.js --s igcmodal | uglifyjs -c > dist/igcmodal.min.js",
+        "build-debug": "browserify src/igcmodal.js -d --s igcmodal > dist/igcmodal.js",
+        
+        "build": "npm run build-debug && npm run build-min && npm run build-min-css && npm run build-debug-css",
+        
+        "watch": "watchify src/igcmodal.js -d --s igcmodal -o dist/igcmodal.js -v",
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
         "type": "git",

@@ -1,0 +1,79 @@
+.igcmodal {
+    background: rgba(0, 0, 0, .6);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1001;
+    display: none;
+    font-size: inherit;
+    font: inherit;
+    font-weight: inherit;
+    overflow-y: auto;
+}
+
+.igcmodal.igcmodal-visible {
+    display: block;
+}
+
+.igcmodal .igcmodal-content {
+    min-width: 450px;
+    max-width: 450px;
+    min-height: 100%;
+    display: table;
+    margin: 0 auto;
+}
+
+.igcmodal .igcmodal-cell {
+    display: table-cell;
+    min-height: 100%;
+    vertical-align: middle;
+}
+
+.igcmodal .igcmodal-cell .igcmodal-box {
+    position: relative;
+    background: #fff;
+    min-height: 100%;
+    margin: 5vh auto;
+}
+
+.igcmodal .igcmodal-closebtn {
+    color: #AAAAAA;
+    cursor: pointer;
+    font-size: 2.2rem;
+    font-weight: bold;
+    line-height: 1;
+    position: absolute;
+    top: 0;
+    right: .6rem;
+    text-decoration: none;
+    margin-bottom: 0;
+    /* It is recommended that close button does not inherit to avoid positioning bugs */
+    font-family: serif;
+}
+
+@supports (-ms-accelerator:true) {
+    /* EDGE ONLY */
+    .igcmodal {
+        height: auto;
+        min-height: 100%;
+    }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /* IE10+ ONLY */
+    .igcmodal .igcmodal-content {
+        height: auto;
+        min-height: auto;
+    }
+}
+
+@-moz-document url-prefix() {
+    /* FIREFOX ONLY */
+    .igcmodal .igcmodal-content {
+        height: 100%;
+    }
+}

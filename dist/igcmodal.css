@@ -1,4 +1,4 @@
-.igc-modal {
+.igcmodal {
     background: rgba(0, 0, 0, .6);
     position: fixed;
     width: 100%;
@@ -15,11 +15,11 @@
     overflow-y: auto;
 }
 
-.igc-modal.igc-modal-visible {
+.igcmodal.igcmodal-visible {
     display: block;
 }
 
-.igc-modal .igc-modal-content {
+.igcmodal .igcmodal-content {
     min-width: 450px;
     max-width: 450px;
     min-height: 100%;
@@ -27,20 +27,20 @@
     margin: 0 auto;
 }
 
-.igc-modal .igc-modal-cell {
+.igcmodal .igcmodal-cell {
     display: table-cell;
     min-height: 100%;
     vertical-align: middle;
 }
 
-.igc-modal .igc-modal-cell .igc-modal-box {
+.igcmodal .igcmodal-cell .igcmodal-box {
     position: relative;
     background: #fff;
     min-height: 100%;
     margin: 5vh auto;
 }
 
-.igc-modal .igc-modal-closebtn {
+.igcmodal .igcmodal-closebtn {
     color: #AAAAAA;
     cursor: pointer;
     font-size: 2.2rem;
@@ -57,7 +57,7 @@
 
 @supports (-ms-accelerator:true) {
     /* EDGE ONLY */
-    .igc-modal {
+    .igcmodal {
         height: auto;
         min-height: 100%;
     }
@@ -65,7 +65,7 @@
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     /* IE10+ ONLY */
-    .igc-modal .igc-modal-content {
+    .igcmodal .igcmodal-content {
         height: auto;
         min-height: auto;
     }
@@ -73,7 +73,7 @@
 
 @-moz-document url-prefix() {
     /* FIREFOX ONLY */
-    .igc-modal .igc-modal-content {
+    .igcmodal .igcmodal-content {
         height: 100%;
     }
 }

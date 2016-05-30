@@ -2,7 +2,7 @@
 
 describe('IGC Modal Tests', function() {
 
-    var modal1 = IgcModal({
+    var modal1 = igcmodal({
         className: 'modal1',
         content: '<h1>This is a modal #1.</h1>',
         maxWidth: 600,
@@ -10,7 +10,7 @@ describe('IGC Modal Tests', function() {
         closeButton: true
     });
 
-    var modal2 = IgcModal({
+    var modal2 = igcmodal({
         className: 'modal2',
         content: '<h1>This is a modal #2.</h1>',
         maxWidth: 444,
@@ -26,19 +26,19 @@ describe('IGC Modal Tests', function() {
     describe('Features', function() {
 
         it('Modal closeButton === true, Passed!', function() {
-            expect($('.igc-modal-closebtn', modal1.modal).length > 0).to.equal(true);
+            expect($('.igcmodal-closebtn', modal1.modal).length > 0).to.equal(true);
         });
 
         it('Modal closeButton === false, Passed!', function() {
-            expect($('.igc-modal-closebtn', modal2.modal).length > 0).to.equal(false);
+            expect($('.igcmodal-closebtn', modal2.modal).length > 0).to.equal(false);
         });
 
         it('Modal has correct min-width attribute!', function() {
-            expect($('.igc-modal-content', modal2.modal).css('min-width')).to.equal(111 + 'px');
+            expect($('.igcmodal-content', modal2.modal).css('min-width')).to.equal(111 + 'px');
         });
 
         it('Modal has correct max-width attribute!', function() {
-            expect($('.igc-modal-content', modal2.modal).css('max-width')).to.equal(444 + 'px');
+            expect($('.igcmodal-content', modal2.modal).css('max-width')).to.equal(444 + 'px');
         });
 
     });
@@ -50,7 +50,7 @@ describe('IGC Modal Tests', function() {
         });
 
         it('Modal can be shown!', function() {
-            expect($(modal1.modal).hasClass('igc-modal-visible')).to.equal(true);
+            expect($(modal1.modal).hasClass('igcmodal-visible')).to.equal(true);
         });
 
         it('Modal isShowing reading is correct!', function() {
@@ -74,7 +74,7 @@ describe('IGC Modal Tests', function() {
         });
 
         it('Modal can be hid!', function() {
-            expect($(modal1.modal).hasClass('igc-modal-visible')).to.equal(false);
+            expect($(modal1.modal).hasClass('igcmodal-visible')).to.equal(false);
         });
 
         it('Modal isShowing reading is correct!', function() {
@@ -124,7 +124,7 @@ describe('IGC Modal Tests', function() {
                 done();
             };
 
-            tempModal = IgcModal({
+            tempModal = igcmodal({
                 beforeShow: handleCallback
             });
 
@@ -139,7 +139,7 @@ describe('IGC Modal Tests', function() {
                 done();
             };
 
-            tempModal = IgcModal({
+            tempModal = igcmodal({
                 afterShow: handleCallback
             });
 
@@ -154,7 +154,7 @@ describe('IGC Modal Tests', function() {
                 done();
             };
 
-            tempModal = IgcModal({
+            tempModal = igcmodal({
                 beforeHide: handleCallback
             });
 
@@ -169,7 +169,7 @@ describe('IGC Modal Tests', function() {
                 done();
             };
 
-            tempModal = IgcModal({
+            tempModal = igcmodal({
                 afterHide: handleCallback
             });
 
@@ -182,7 +182,7 @@ describe('IGC Modal Tests', function() {
             handleCallback = function() {
                 // setTimeout is required to test the correct instance reference
                 // because afterDomInit callback is fired before the "this" instance
-                // is returned on IgcModal invocation. Thus the purpose of setTimeout
+                // is returned on igcmodal invocation. Thus the purpose of setTimeout
                 // is to clear the callstack and move the reference checks to run after
                 // the "this" reference is assigned to tempModal
                 setTimeout(function() {
@@ -191,7 +191,7 @@ describe('IGC Modal Tests', function() {
                 }.bind(this), 0);
             };
 
-            tempModal = IgcModal({
+            tempModal = igcmodal({
                 afterDomInit: handleCallback
             });
 
@@ -200,13 +200,13 @@ describe('IGC Modal Tests', function() {
 
     });
 
-    describe('Glabal Modal Callbacks', function() {
+    describe('Global Modal Callbacks', function() {
 
         it('hideAll function hides all visible modals!', function() {
             modal1.show();
             modal2.show();
 
-            IgcModal.hideAll();
+            igcmodal.hideAll();
 
             expect(modal1.isHidden() && modal2.isHidden()).to.equal(true);
         });
@@ -220,7 +220,7 @@ describe('IGC Modal Tests', function() {
             
             modal1.setContent(content);
             
-            expect($('.igc-modal-inner', modal1.modal).html() === '<div>' + content + '</div>').to.equal(true);
+            expect($('.igcmodal-inner', modal1.modal).html() === '<div>' + content + '</div>').to.equal(true);
         });
         
         it('Element content equality!', function() {
@@ -228,7 +228,7 @@ describe('IGC Modal Tests', function() {
             
             modal1.setContent(content);
             
-            expect($('.igc-modal-inner', modal1.modal).html() === '<div>' + content.innerHTML + '</div>').to.equal(true);
+            expect($('.igcmodal-inner', modal1.modal).html() === '<div>' + content.innerHTML + '</div>').to.equal(true);
         });
 
     });

@@ -2,15 +2,15 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-.igc-modal .igc-modal-inner {
+.igcmodal .igcmodal-inner {
     padding: 24px;
 }
 
-.igc-modal .igc-modal-cell .igc-modal-box {
+.igcmodal .igcmodal-cell .igcmodal-box {
     border-radius: 10px;
 }
 
-.igc-modal .igc-modal-closebtn {
+.igcmodal .igcmodal-closebtn {
     background: #00BCD4;
     width: 50px;
     height: 50px;
@@ -23,18 +23,18 @@ body {
     font-size: 40px;
 }
 
-.igc-modal {
+.igcmodal {
     background: rgba(0, 0, 0, .3);
 }
 
-.igc-modal.igc-modal-visible {
+.igcmodal.igcmodal-visible {
     background: rgba(0, 0, 0, .3);
     animation-name: fadeInFromNone;
     animation-duration: 0.5s;
     animation-fill-mode: both;
 }
 
-.igc-modal.igc-modal-visible .igc-modal-box {
+.igcmodal.igcmodal-visible .igcmodal-box {
     box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.2);
     animation-name: fadeInDown;
     animation-duration: 1s;
@@ -64,23 +64,23 @@ body {
 
 /* TOP ALIGNMENT MODAL */
 
-.igc-modal.top-alignment .igc-modal-content {
+.igcmodal.top-alignment .igcmodal-content {
     min-height: auto;
     height: auto;
 }
 
-.igc-modal.top-alignment .igc-modal-cell .igc-modal-box {
+.igcmodal.top-alignment .igcmodal-cell .igcmodal-box {
     margin: 8vh auto;
 }
 
 
 /* SCROLLABLE CONTENT */
 
-.igc-modal.scrollable-content .igc-modal-inner > div {
+.igcmodal.scrollable-content .igcmodal-inner > div {
     overflow: hidden;
 }
 
-.igc-modal.scrollable-content .igc-modal-inner .scrollable {
+.igcmodal.scrollable-content .igcmodal-inner .scrollable {
     overflow: auto;
     max-height: 50vh;
     margin-right: -18px;
@@ -88,7 +88,7 @@ body {
 
 @supports (overflow:-webkit-marquee) and (justify-content:inherit) {
     /* SAFARI 9+ ONLY */
-    .igc-modal.scrollable-content .igc-modal-inner .scrollable {
+    .igcmodal.scrollable-content .igcmodal-inner .scrollable {
         overflow: auto;
         max-height: 50vh;
         margin-right: 0;
@@ -96,7 +96,7 @@ body {
 }
 
 @media only screen and (max-width:630px) {
-    .igc-modal .igc-modal-closebtn {
+    .igcmodal .igcmodal-closebtn {
         right: 0;
     }
 }

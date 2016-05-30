@@ -5,18 +5,14 @@
 		<title>IGC Modal</title>
         
         <!-- src imports -->
-		<link rel="stylesheet" href="../src/igc-modal.css">
-		<script src="../src/igc-modal.js"></script>
-        
-        <!-- dist imports -->
-        <!--<link rel="stylesheet" href="../dist/igc-modal.min.css">
-		<script src="../dist/igc-modal.min.js"></script>-->
+		<link rel="stylesheet" href="../src/igcmodal.css">
+		<script src="../dist/igcmodal.js"></script>
 	</head>
 	<body>
 		<script>
             var modalDemo, modalDemo2;
             
-            modalDemo = IgcModal({
+            modalDemo = igcmodal({
                 className: "modal-demo",
                 content: "<h1>This is a modal.</h1><br><h1>This is a modal.</h1><br><h1>This is a modal.</h1><br><h1>This is a modal.</h1><br><h1>This is a modal.</h1><br><h1>This is a modal.</h1><br><h1>This is a modal.</h1><br><h1>This is a modal.</h1><br><h1>This is a modal.</h1>",
                 maxWidth: 600, // 600 = 600px
@@ -48,7 +44,7 @@
                 }
             }).show();
 
-			modalDemo2 = IgcModal({
+			modalDemo2 = igcmodal({
                 className: "modal-demo2",
                 content: "<h1>This is a modal #2.<br>This is a modal #2.<br>This is a modal #2.<br>This is a modal #2.</h1>",
                 maxWidth: 600, // 600 = 600px
