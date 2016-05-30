@@ -15,12 +15,12 @@ None.
 1. Clone repository
 2. Run npm install
 3. Run npm run build
-4. Reference dist/igc-modal.min.js & dist/igc-modal.min.css
+4. Reference dist/igcmodal.min.js & dist/igcmodal.min.css OR import with your favourite module loader
 
 Example:
 
 ```sh
-var modalDemo = IgcModal({
+var modalDemo = igcmodal({
     className: "modal-demo",
     content: "<h1>This is a modal.</h1>",
     maxWidth: 600, // 600 = 600px

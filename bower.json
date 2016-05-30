@@ -1,7 +1,7 @@
 {
-  "name": "igc-modal",
-  "description": "1.1.0",
-  "main": "src/igc-modal.js",
+  "name": "igcmodal",
+  "description": "simple pure js modal",
+  "main": "dist/igcmodal.js",
   "authors": [
     "Jean Farrugia"
   ],
